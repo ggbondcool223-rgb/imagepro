@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:image_compose/pages/image_compose_freeze/image_compose_freeze_binding.dart';
+import 'package:image_compose/pages/image_compose_freeze/image_compose_freeze_view.dart';
+import 'package:image_compose/pages/image_compose_home/image_compose_home_write.dart';
 import '../pages/image_compose_tab/image_compose_tab_binding.dart';
 import '../pages/image_compose_tab/image_compose_tab_view.dart';
 import '../pages/image_compose_home/image_compose_home_binding.dart';
@@ -72,7 +75,7 @@ class MyApp extends StatelessWidget {
                 backgroundColor: const Color(0xFF0B0B1E),
               )
           ),
-          initialRoute: '/image_compose_tab',
+          initialRoute: '/',
           getPages: Compose,
         );
       },
@@ -80,6 +83,14 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Compose = [
+  GetPage(
+    name: '/',
+    page: () => const ImageComposeFreezeView(),
+    binding: ImageComposeFreezeBinding(),
+    transition: Transition.cupertino,
+    popGesture: true,
+    preventDuplicates: false,
+  ),
   GetPage(
     name: '/image_compose_tab',
     page: () => const ImageComposeTabView(),
@@ -92,6 +103,13 @@ List<GetPage<dynamic>> Compose = [
     name: '/image_compose_home',
     page: () => const ImageComposeHomeView(),
     binding: ImageComposeHomeBinding(),
+    transition: Transition.cupertino,
+    popGesture: true,
+    preventDuplicates: false,
+  ),
+  GetPage(
+    name: '/image_compose_write',
+    page: () => ImageComposeHomeWrite(),
     transition: Transition.cupertino,
     popGesture: true,
     preventDuplicates: false,

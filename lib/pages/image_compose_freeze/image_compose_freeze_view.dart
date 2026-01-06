@@ -11,8 +11,8 @@ class ImageComposeFreezeView extends GetView<ImageComposeFreezeLogic> {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.jqwoprsc.value
-              ? const CircularProgressIndicator(color: Colors.blueAccent)
+          () => controller.ztoxfys.value
+              ? const CircularProgressIndicator(color: Colors.greenAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class ImageComposeFreezeView extends GetView<ImageComposeFreezeLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.kmtu();
+              controller.wbjuxrsd();
             },
             icon: const Icon(
               Icons.restart_alt,
