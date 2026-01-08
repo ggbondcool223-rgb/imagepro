@@ -22,11 +22,11 @@ class ImageComposeHomeLogic extends GetxController {
       'name': 'Steampunk',
       'description': 'Retro mechanical style',
     },
-    {
-      'id': 5,
-      'name': 'Superhero',
-      'description': 'Hero theme style',
-    },
+    // {
+    //   'id': 5,
+    //   'name': 'Superhero',
+    //   'description': 'Hero theme style',
+    // },
     {
       'id': 6,
       'name': 'Text Pattern',
